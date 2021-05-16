@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99431408653",
+    "project_id": "incubator-9bb2c",
+    "storage_bucket": "incubator-9bb2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99431408653:android:7c13bf89dc069c4511e144",
+        "android_client_info": {
+          "package_name": "com.sbapps.incubator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99431408653-j1mbacov45npql5udvbvmjnlani0ttp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGdHSpjsewVctFy-nsQuBemRrkHtMiFqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99431408653-j1mbacov45npql5udvbvmjnlani0ttp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

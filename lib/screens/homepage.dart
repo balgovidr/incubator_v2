@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:incubator_v2/services/authentication_service.dart';
+import 'package:provider/provider.dart';
 
 class Homepage extends StatelessWidget {
+  final TextEditingController signInEmailController = TextEditingController();
+  final TextEditingController signInPasswordController =
+      TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: ListView(
         children: [
@@ -21,12 +28,14 @@ class Homepage extends StatelessWidget {
                 Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
+                      controller: signInEmailController,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(), hintText: 'Email'),
                     )),
                 Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
+                      controller: signInPasswordController,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(), hintText: 'Password'),
                     )),
@@ -38,7 +47,11 @@ class Homepage extends StatelessWidget {
                       child: ElevatedButton(
                           child: Text('Login'),
                           onPressed: () {
-                            print("Sign in");
+                            context.read<AuthenticationService>().signIn(
+                                  email: signInEmailController.text.trim(),
+                                  password:
+                                      signInPasswordController.text.trim(),
+                                );
                           }),
                     ),
                     Padding(

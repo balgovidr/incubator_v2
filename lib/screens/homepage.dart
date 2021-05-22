@@ -6,6 +6,15 @@ class Homepage extends StatelessWidget {
   final TextEditingController signInEmailController = TextEditingController();
   final TextEditingController signInPasswordController =
       TextEditingController();
+  final TextEditingController signUpFirstNameController =
+      TextEditingController();
+  final TextEditingController signUpLastNameController =
+      TextEditingController();
+  final TextEditingController signUpEmailController = TextEditingController();
+  final TextEditingController signUpPasswordController =
+      TextEditingController();
+  final TextEditingController signUpPassword2Controller =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +84,7 @@ class Homepage extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.all(16.0),
                       child: TextField(
+                        controller: signUpFirstNameController,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'First name'),
@@ -82,6 +92,7 @@ class Homepage extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.all(16.0),
                       child: TextField(
+                        controller: signUpLastNameController,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Last name'),
@@ -89,18 +100,21 @@ class Homepage extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.all(16.0),
                       child: TextField(
+                        controller: signUpEmailController,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(), hintText: 'Email'),
                       )),
                   Padding(
                       padding: EdgeInsets.all(16.0),
                       child: TextField(
+                        controller: signUpPasswordController,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(), hintText: 'Password'),
                       )),
                   Padding(
                       padding: EdgeInsets.all(16.0),
                       child: TextField(
+                        controller: signUpPassword2Controller,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Repeat password'),
@@ -110,7 +124,13 @@ class Homepage extends StatelessWidget {
                     child: ElevatedButton(
                         child: Text('Signup'),
                         onPressed: () {
-                          print("signup pressed");
+                          context.read<AuthenticationService>().signUp(
+                                firstName:
+                                    signUpFirstNameController.text.trim(),
+                                lastName: signUpLastNameController.text.trim(),
+                                email: signUpEmailController.text.trim(),
+                                password: signUpPasswordController.text.trim(),
+                              );
                         }),
                   )
                 ],

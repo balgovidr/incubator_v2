@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:incubator_v2/screens/homepage.dart';
 import 'package:incubator_v2/themes.dart';
-import 'package:incubator_v2/services/authentication_service.dart';
 import 'package:incubator_v2/screens/ideas.dart';
 
 // Import the firebase_core plugin
